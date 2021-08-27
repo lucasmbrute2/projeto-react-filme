@@ -1,11 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import Card from "./components/exemplo"
+import App from "./components/App"
 
 ReactDOM.render(
   <React.StrictMode>
-   <Card/>
+  <App/>
+  
   </React.StrictMode>,
   document.getElementById('root')
 );

@@ -1,76 +1,60 @@
-import React, { useEffect, useState } from "react";
-import './exemplo.css'; 
+import React,{ useState , useEffect} from 'react'; 
 
 
-export default function ExemploFuncao() {
-  const [count, setCount] = useState(0);
-  const [lista, setLista] = useState([
-    {
-      id: 1,
-      nome: "Capitão América: O primeiro vingador",
-      imagemUrl:
-        "https://play-lh.googleusercontent.com/9LAzip_XWe8eVWEUGCnSJ4xf706RmYtSu5bZRAfvqbs2aW6YVlLbPF7UVTfMpJKQUioKGw",
-    },
-    {
-      id: 2,
-      nome: "Capitã Marvel",
-      imagemUrl:
-        "https://br.web.img2.acsta.net/pictures/19/02/04/18/35/1468867.jpg",
-    },
-    {
-      id: 3,
-      nome: "O incrivel Hulk",
-      imagemUrl:
-        "https://br.web.img2.acsta.net/c_310_420/pictures/210/485/21048566_20131010182211313.jpg",
-    },
-    {
-      id: 4,
-      nome: "Homem de Ferro",
-      imagemUrl:
-        "https://images-na.ssl-images-amazon.com/images/I/81vTHovrz%2BL._AC_SY606_.jpg",
-    },
-    {
-      id: 5,
-      nome: "Homem de Ferro 2",
-      imagemUrl:
-        "https://media.fstatic.com/SFp4c8GT3GTGYok7_526qDSHTns=/290x478/smart/media/movies/covers/2018/09/66432b37ed80464274a58239b695007f95c79155.jpg",
-    },
-  ]);
-
-  useEffect(() => {
-    document.title = count;
-  }, [count]);
-
- 
-
-}
-    
-    return (
-    <>
-      
-      {/* <p>{count}</p>
-      <button onClick={() => setCount(count + 1)}>Adiciona</button> */}
-       <ul>
-        {lista.map((lista,index)=>(
-            <li key ={index}>
-                <p>{lista.nome}</p>
-                <img src={lista.imagemUrl}></img>
-            </li>
-        ))}
-       </ul>
-       <h2>Cadastre meu filme</h2> 
-       <form>
-        <label for="add">Nome</label>
-        <input className="add"></input>
-        
-        <label for="edit">Url</label>
-        <input className=''></input>
-        
-        <button onClick={()=>setLista(lista[id-1])}>Enviar</button>
-        
-        
-      </form> 
-       
-    </>
-);
+export function Card(){
   
+  const [filmes,setFilmes] = useState([
+    {
+      id:1,
+      nome: "Parasita",
+      imagem: "https://br.web.img3.acsta.net/c_310_420/pictures/19/10/04/19/58/1046648.jpg"
+    
+    },
+    {
+      id:2,
+      nome: "Interestelar",
+      imagem: "https://img.ibxk.com.br/2014/11/06/06152124529040.jpg?w=1120&h=420&mode=crop&scale=both"
+    
+    },
+    {
+      id:3,
+      nome: "Django Livre", 
+      imagem: "https://cdn.abcdoabc.com.br/Django-Livre-1_809e0fab.jpg"
+    }
+    
+    
+  ])
+  const notAddMovie = e => e.preventDefault();
+  
+  return(
+    <div className="container">
+      <div className ="card-container">
+      {filmes.map((f)=>(
+        <section key ={f.id}>
+          <h1>{f.nome}</h1>
+          <img src = {f.imagem} alt ={f.nome}></img>
+        </section>
+  ))}
+      </div>
+      <div className="form">
+          <form onSubmit = {notAddMovie}>
+            <label for="nome">Digite o nome do filme</label>
+            <input className="nome"></input>
+          
+            <label for="imagem">Insira a url da imagem</label>
+            <input className="imagem" ></input>
+            
+            {/* <button onClick={()=>setFilmes(filmes.nome =nome.value )}>Enviar</button> */}
+          </form> 
+      </div>   
+        
+        
+    </div>
+    
+  
+  )
+}
+
+
+
+export default Card 

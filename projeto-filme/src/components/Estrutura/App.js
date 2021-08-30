@@ -1,5 +1,5 @@
 import React,{ useState } from "react";
-import Filme from "../Banner/Banner"
+import "./App.css"
 
 const App = ()=>{
     
@@ -8,7 +8,7 @@ const App = ()=>{
             id:1,
             nome: "Parasita",
             lancamento: "Em breve nos cinemas",
-            imagem: "http://artecult.com/wp-content/uploads/2019/11/Parasita-Poster-428x600.jpg",
+            imagem: "https://img.elo7.com.br/product/zoom/2D25BD4/big-poster-filme-parasita-2019-lo004-tamanho-90x60-cm-poster-de-filme.jpg",
             trailer: "https://www.youtube.com/watch?v=m4jfE-TxC24"
         },
         {
@@ -29,17 +29,55 @@ const App = ()=>{
         
     ])
     
+    const handleSubmit =e=>{
+        e.preventDefault()
+    }
+    
+    
+    
     return(
-        <div 
-        className="App" 
-        style={{
-            display: "flex",
-            justifyContent: "center"
-        }}
-        >
+    <div className="App">
         
-        <Filme filmes={filmes}/>
-        </div>
+        <div className='container-form'>
+            <form onSubmit={handleSubmit}>
+            
+            <label>Nome </label>
+            <input></input>
+            <br></br>
+            
+            <label>Lançamento </label>
+            <input ></input>
+            <br></br>
+            
+            <label>Imagem </label>
+            <input></input>
+            <br></br>
+            
+            <label>Trailer </label>
+            <input></input>
+            <br></br>
+            
+            <button>Enviar</button>
+            </form>
+        </div> 
+            <div className ="container-card">
+                <ul className="container-card__ul">
+                {filmes.map((f)=>(
+                    <li key={f.id} className="container-card__movie-list"> 
+                        <div>
+                            <h2 className ="movie-title">{f.nome}</h2>
+                            <p className="movie-desc">{f.lancamento}</p>
+                        </div>
+                        <div>
+                            <img src={f.imagem} alt= {f.nome}/>
+                            <button className='bttn-trailer'><a href={f.trailer} target="_blank"  rel="noreferrer">Ver trailer</a></button>
+                        </div>
+                    </li>
+                    ))}
+                        
+                </ul>
+            </div>
+    </div>
         
     );
 }

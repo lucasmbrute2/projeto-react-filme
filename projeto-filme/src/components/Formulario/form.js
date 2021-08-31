@@ -27,11 +27,11 @@ const Formulario = ({ filmes , setFilmes }) => {
 
     const HandleSubmit = (e) =>{
         e.preventDefault()
-        const posi = filmes.map((f,index)=> index-1)
+        const ultimoFilme = filmes[filmes.length-1] 
         setFilmes([
             ...filmes,
             {
-                id: posi.id+1,
+                id: ultimoFilme.id+1,
                 nome: nomeFilme,
                 lancamento: lancamentoFilme,
                 imagem: url,
@@ -45,19 +45,19 @@ const Formulario = ({ filmes , setFilmes }) => {
     <div className="container-form">
       <form onSubmit={HandleSubmit}>
         <label>Nome </label>
-        <input value={nomeFilme} onChange={handleChangeName}></input>
+        <input value={nomeFilme} onChange={handleChangeName} required></input>
         <br></br>
 
         <label>Lançamento </label>
-        <input value ={lancamentoFilme} onChange = {handleChangeLancamento}></input>
+        <input value ={lancamentoFilme} onChange = {handleChangeLancamento} required></input>
         <br></br>
 
         <label>Imagem </label>
-        <input value ={url} onChange ={handleChangeUrl}></input>
+        <input value ={url} onChange ={handleChangeUrl} required></input>
         <br></br>
 
         <label>Trailer </label>
-        <input value ={trailerFilme} onChange={handleChangeTrailer}></input>
+        <input value ={trailerFilme} onChange={handleChangeTrailer} required></input>
         <br></br>
 
         <button type="submit">Enviar</button>

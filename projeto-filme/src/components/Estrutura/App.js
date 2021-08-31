@@ -1,6 +1,6 @@
 import React,{ useState } from "react";
+import Formulario from "../Formulario/form"
 import "./App.css"
-
 const App = ()=>{
     
     const [filmes,setFilmes] = useState([
@@ -19,7 +19,7 @@ const App = ()=>{
             trailer: "https://www.youtube.com/watch?v=frD_IiY_A3E"
         },
         {
-            id:3,
+            id:9,
             nome: "Django Livre", 
             lancamento: "Em breve nos cinemas",
             imagem: "https://upload.wikimedia.org/wikipedia/pt/8/8b/Django_Unchained_Poster.jpg",
@@ -29,6 +29,11 @@ const App = ()=>{
         
     ])
     
+    const handleDelete = (id)=>{
+        setFilmes(filmes.filter((e)=> id !=e.id ))
+
+    }
+
     const handleSubmit =e=>{
         e.preventDefault()
     }
@@ -38,32 +43,12 @@ const App = ()=>{
     return(
     <div className="App">
         
-        <div className='container-form'>
-            <form onSubmit={handleSubmit}>
-            
-            <label>Nome </label>
-            <input></input>
-            <br></br>
-            
-            <label>Lançamento </label>
-            <input ></input>
-            <br></br>
-            
-            <label>Imagem </label>
-            <input></input>
-            <br></br>
-            
-            <label>Trailer </label>
-            <input></input>
-            <br></br>
-            
-            <button>Enviar</button>
-            </form>
-        </div> 
+            <Formulario filmes = {filmes} setFilmes ={setFilmes} />
             <div className ="container-card">
                 <ul className="container-card__ul">
                 {filmes.map((f)=>(
                     <li key={f.id} className="container-card__movie-list"> 
+                        <button>{f.id}</button>
                         <div>
                             <h2 className ="movie-title">{f.nome}</h2>
                             <p className="movie-desc">{f.lancamento}</p>
@@ -71,6 +56,7 @@ const App = ()=>{
                         <div>
                             <img src={f.imagem} alt= {f.nome}/>
                             <button className='bttn-trailer'><a href={f.trailer} target="_blank"  rel="noreferrer">Ver trailer</a></button>
+                            <button className ="bttn-exlcuir" type='button' onClick={()=>handleDelete(f.id)}>Excluir</button>
                         </div>
                     </li>
                     ))}

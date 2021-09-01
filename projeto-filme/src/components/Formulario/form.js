@@ -1,6 +1,6 @@
 import React,{useState} from "react";
 
-const Formulario = ({ filmes , setFilmes }) => {
+const Formulario = ({ filmes , setFilmes , label1 , label2 , label3 , label4}) => {
   
     const [nomeFilme,setNome] = useState('');
     const [lancamentoFilme, setLancamento]= useState('');
@@ -45,19 +45,19 @@ const Formulario = ({ filmes , setFilmes }) => {
     return (
     <div className="container-form">
       <form onSubmit={HandleSubmit}>
-        <label>Nome </label>
+        <label>{label1} </label>
         <input value={nomeFilme} onChange={handleChangeName} required></input>
         <br></br>
 
-        <label>Lançamento </label>
+        <label>{label2} </label>
         <input value ={lancamentoFilme} onChange = {handleChangeLancamento} required></input>
         <br></br>
 
-        <label>Imagem </label>
+        <label>{label3} </label>
         <input value ={url} onChange ={handleChangeUrl} required></input>
         <br></br>
 
-        <label>Trailer </label>
+        <label>{label4} </label>
         <input value ={trailerFilme} onChange={handleChangeTrailer} required></input>
         <br></br>
         <button type="submit">Enviar</button>

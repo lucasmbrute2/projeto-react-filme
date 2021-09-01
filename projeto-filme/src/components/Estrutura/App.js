@@ -40,7 +40,7 @@ const App = ()=>{
     return(
     <div className="App">
         
-            <Formulario filmes = {filmes} setFilmes ={setFilmes} />
+            <Formulario label1 = "Nome" label2 = "Lançamento" label3="Imagem" label4="trailer" filmes = {filmes} setFilmes ={setFilmes} />
             <div className ="container-card">
                 <ul className="container-card__ul">
                 {filmes.map((f)=>(

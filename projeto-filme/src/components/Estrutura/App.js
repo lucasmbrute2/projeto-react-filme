@@ -29,14 +29,12 @@ const App = ()=>{
         
     ])
     
+    const [editando,setEditando] =useState(false);
+    
     const handleDelete = (id)=>{
         setFilmes(filmes.filter((e)=> id !=e.id ))
 
-    }
-
-
-    
-    
+    }  
     
     return(
     <div className="App">
@@ -55,6 +53,7 @@ const App = ()=>{
                             <img src={f.imagem} alt= {f.nome}/>
                             <button className='bttn-trailer'><a href={f.trailer} target="_blank"  rel="noreferrer">Ver trailer</a></button>
                             <button className ="bttn-exlcuir" type='button' onClick={()=>handleDelete(f.id)}>Excluir</button>
+
                         </div>
                     </li>
                     ))}

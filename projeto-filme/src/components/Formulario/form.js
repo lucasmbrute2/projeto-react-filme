@@ -8,6 +8,7 @@ const Formulario = ({ filmes , setFilmes }) => {
     const [trailerFilme,setTrailer]= useState('');
     
     
+    
    
     const handleChangeName = (e)=>{
         setNome(e.target.value)
@@ -59,8 +60,9 @@ const Formulario = ({ filmes , setFilmes }) => {
         <label>Trailer </label>
         <input value ={trailerFilme} onChange={handleChangeTrailer} required></input>
         <br></br>
-
         <button type="submit">Enviar</button>
+        
+        
       </form>
     </div>
   );

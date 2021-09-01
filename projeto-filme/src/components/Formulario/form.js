@@ -6,7 +6,7 @@ const Formulario = ({ filmes , setFilmes }) => {
     const [lancamentoFilme, setLancamento]= useState('');
     const [url,setUrl]= useState('');
     const [trailerFilme,setTrailer]= useState('');
-    
+    const [editando,setEditando] = useState(false);
     
     
    
@@ -40,7 +40,7 @@ const Formulario = ({ filmes , setFilmes }) => {
             }
         ])
     }
-  
+    
   
     return (
     <div className="container-form">

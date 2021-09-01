@@ -11,7 +11,7 @@
 
 body{
 
-    background-color: azure;
+    background-color: rgb(109, 73, 73);
 }
 
 
@@ -53,8 +53,9 @@ img{
 
 .container-card__movie-list{
     
+    background-color: white;
     margin: auto 2rem;
-    box-shadow: 5px 5px 20px 2px #000000;
+    box-shadow: 5px 2px 20px 2px #000000;
     border-radius: 3%;    
     
 }

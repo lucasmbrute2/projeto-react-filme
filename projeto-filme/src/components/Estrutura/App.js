@@ -1,6 +1,7 @@
 import React,{ useState } from "react";
 import Formulario from "../Formulario/form"
 import "./App.css"
+import Bttn from "../Bttn/index"
 const App = ()=>{
     
     const [filmes,setFilmes] = useState([
@@ -44,16 +45,15 @@ const App = ()=>{
                 <ul className="container-card__ul">
                 {filmes.map((f)=>(
                     <li key={f.id} className="container-card__movie-list"> 
-                        <button>{f.id}</button>
                         <div>
                             <h2 className ="movie-title">{f.nome}</h2>
                             <p className="movie-desc">{f.lancamento}</p>
                         </div>
                         <div>
                             <img src={f.imagem} alt= {f.nome}/>
-                            <button className='bttn-trailer'><a href={f.trailer} target="_blank"  rel="noreferrer">Ver trailer</a></button>
-                            <button className ="bttn-exlcuir" type='button' onClick={()=>handleDelete(f.id)}>Excluir</button>
-
+                            <Bttn texto="Ver trailer" href={f.trailer}/>
+                            <Bttn texto ="Excluir"onClick ={()=>(handleDelete(f.id))}/>
+                            <Bttn texto="Editar"/>
                         </div>
                     </li>
                     ))}

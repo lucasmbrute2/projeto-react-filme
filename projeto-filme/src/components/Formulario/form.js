@@ -1,5 +1,5 @@
 import React,{useState} from "react";
-
+import Bttn from "../Bttn/bttn"
 const Formulario = ({ filmes , setFilmes , label1 , label2 , label3 , label4}) => {
   
     const [nomeFilme,setNome] = useState('');
@@ -60,7 +60,7 @@ const Formulario = ({ filmes , setFilmes , label1 , label2 , label3 , label4}) =
         <label>{label4} </label>
         <input value ={trailerFilme} onChange={handleChangeTrailer} required></input>
         <br></br>
-        <button type="submit">Enviar</button>
+        <Bttn texto="Enviar" type="submit"/>
         
         
       </form>

@@ -1,7 +1,7 @@
 import React,{ useState } from "react";
 import Formulario from "../Formulario/form"
 import "./App.css"
-import Bttn from "../Bttn/index"
+import Bttn from "../Bttn/bttn"
 const App = ()=>{
     
     const [filmes,setFilmes] = useState([

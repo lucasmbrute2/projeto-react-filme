@@ -11,7 +11,7 @@
 
 body{
 
-    background-color: rgb(109, 73, 73);
+    background-color: rgb(175, 61, 61);
 }
 
 
@@ -22,6 +22,11 @@ img{
     border-radius: 2%;
 }
 
+h2,p{
+    
+    color: #fff
+
+}
 .movie-title,.movie-desc{
 
     
@@ -53,7 +58,7 @@ img{
 
 .container-card__movie-list{
     
-    background-color: white;
+    background-color: rgb(34, 28, 28);
     margin: auto 2rem;
     box-shadow: 5px 2px 20px 2px #000000;
     border-radius: 3%;    
@@ -68,4 +73,9 @@ img{
     padding: .3rem;
     display: block;
     
+}
+
+.bttns-card-container{
+    display: flex;
+    padding: 1rem;   
 }

@@ -40,10 +40,10 @@ const App = () => {
   return (
     <div className="App">
       <Formulario
-        label1="Nome"
-        label2="Lançamento"
-        label3="Imagem"
-        label4="trailer"
+        label1="Nome:"
+        label2="Lançamento:"
+        label3="Imagem:"
+        label4="Trailer:"
         filmes={filmes}
         setFilmes={setFilmes}
       />
@@ -55,12 +55,13 @@ const App = () => {
                 <h2 className="movie-title">{f.nome}</h2>
                 <p className="movie-desc">{f.lancamento}</p>
               </div>
-              <div>
-                <img src={f.imagem} alt={f.nome} />
-                <Bttn texto="Ver trailer" href={f.trailer} />
-                <Bttn texto="Excluir" onClick={() => handleDelete(f.id)} />
-
-                <Bttn texto="Editar" />
+                
+                  <img src={f.imagem} alt={f.nome} />
+                <div className="bttns-card-container">
+                  <Bttn texto="Ver trailer" href={f.trailer} className="bttn-card"/>
+                  <Bttn texto="Excluir" onClick={() => handleDelete(f.id)} className="bttn-card"/>
+                  <Bttn texto="Editar" className="bttn-card"/>
+                
               </div>
             </li>
           ))}

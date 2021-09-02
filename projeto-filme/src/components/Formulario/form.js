@@ -1,5 +1,7 @@
 import React,{useState} from "react";
 import Bttn from "../Bttn/bttn"
+import "../Formulario/form.css"
+
 const Formulario = ({ filmes , setFilmes , label1 , label2 , label3 , label4}) => {
   
     const [nomeFilme,setNome] = useState('');
@@ -44,6 +46,7 @@ const Formulario = ({ filmes , setFilmes , label1 , label2 , label3 , label4}) =
   
     return (
     <div className="container-form">
+      <div className ="div_container-form" >
       <form onSubmit={HandleSubmit}>
         <label>{label1} </label>
         <input value={nomeFilme} onChange={handleChangeName} required></input>
@@ -62,8 +65,8 @@ const Formulario = ({ filmes , setFilmes , label1 , label2 , label3 , label4}) =
         <br></br>
         <Bttn texto="Enviar" type="submit"/>
         
-        
       </form>
+      </div>  
     </div>
   );
 };

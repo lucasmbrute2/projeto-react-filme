@@ -46,7 +46,7 @@ const Formulario = ({ filmes, setFilmes, label1, label2, label3, label4 }) => {
         <form onSubmit={HandleSubmit}>
         
               <div className="form-div-space">
-                <h1>Cadastre um item</h1>
+                <h1>Cadastre um filme</h1>
                 <label>{label1} </label>
                 <input
                   value={nomeFilme}

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Formulario from "../Formulario/form";
 import "./App.css";
 import Bttn from "../Bttn/bttn";
@@ -31,43 +31,58 @@ const App = () => {
   ]);
 
   const [editando, setEditando] = useState(false);
-
+  
   const handleDelete = (id) => {
     console.log(handleDelete);
     setFilmes(filmes.filter((e) => id != e.id));
   };
-
+  
+  // const teste = ()=>{
+  //   if(editando){
+  //     const formulario =  <Formulario/>
+  //     console.log(formulario)
+  //     return formulario
+      
+  //   }
+  // }
   return (
-    <div className="App">
-      <Formulario
-        label1="Nome:"
-        label2="Lançamento:"
-        label3="Imagem:"
-        label4="Trailer:"
-        filmes={filmes}
-        setFilmes={setFilmes}
-      />
-      <div className="container-card">
-        <ul className="container-card__ul">
-          {filmes.map((f) => (
-            <li key={f.id} className="container-card__movie-list">
-              <div>
-                <h2 className="movie-title">{f.nome}</h2>
-                <p className="movie-desc">{f.lancamento}</p>
-              </div>
-                
-                  <img src={f.imagem} alt={f.nome} />
+    <div className="App">  
+        <div>
+          <header className = "menu">
+            <p>Filmes.com</p>
+          </header>
+        </div>
+        <Formulario
+          label1="Nome:"
+          label2="Lançamento:"
+          label3="Imagem:"
+          label4="Trailer:"
+          filmes={filmes}
+          setFilmes={setFilmes}
+        />
+      
+        <div className="container-card">
+          
+          <ul className="container-card__ul">
+            {filmes.map((f) => (
+              <li key={f.id} className="container-card__movie-list">
+                <div>
+                  <h2 className="movie-title">{f.nome}</h2>
+                  <p className="movie-desc">{f.lancamento}</p>
+                </div>
+                  
+                    <img src={f.imagem} alt={f.nome} />
                 <div className="bttns-card-container">
-                  <Bttn texto="Ver trailer" href={f.trailer} className="bttn-card"/>
-                  <Bttn texto="Excluir" onClick={() => handleDelete(f.id)} className="bttn-card"/>
-                  <Bttn texto="Editar" className="bttn-card"/>
-                
-              </div>
-            </li>
-          ))}
-        </ul>
+                    <Bttn texto="Ver trailer" href={f.trailer} className="bttn-card"/>
+                    <Bttn texto="Excluir" onClick={() => handleDelete(f.id)} className="bttn-card"/>
+                    <Bttn texto="Editar" onClick = {()=>setEditando(true)} className="bttn-card"/>
+                    
+                </div>
+              </li>
+            ))}
+            </ul>
+        </div>
       </div>
-    </div>
   );
 };
 

@@ -12,6 +12,7 @@
 body{
 
     background-color: rgb(175, 61, 61);
+    margin: 0 0 2rem;
 }
 
 
@@ -25,8 +26,21 @@ img{
 h2,p{
     
     color: #fff
+}
+
+.menu{
+
+    background-color: rgb(20, 17, 17);
+    padding: 1rem;
 
 }
+.menu p {
+    
+    text-align: center;
+    font-size: 2rem;
+}
+
+
 .movie-title,.movie-desc{
 
     

@@ -67,7 +67,7 @@ const Formulario = ({ filmes, setFilmes, label1, label2, label3, label4 }) => {
                 <div className="form-div-space"></div>
                   <label>{label3} </label>
                   <input value={url} onChange={handleChangeUrl} required></input>
-                  <br></br>
+                  
                 <div />
                 <div className="form-div-space"></div>
                   <label>{label4} </label>
@@ -77,10 +77,10 @@ const Formulario = ({ filmes, setFilmes, label1, label2, label3, label4 }) => {
                     required
                   ></input>
                 </div>
-                  
-              
           <Bttn texto="Enviar" type="submit" classname="bttn" />
         </form>
+                  
+              
       </div>
     </div>
   );

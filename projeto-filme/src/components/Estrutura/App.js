@@ -75,7 +75,7 @@ const App = () => {
                 <div className="bttns-card-container">
                     <Bttn texto="Ver trailer" href={f.trailer} className="bttn-card"/>
                     <Bttn texto="Excluir" onClick={() => handleDelete(f.id)} className="bttn-card"/>
-                    <Bttn texto="Editar" onClick = {()=>setFormulario(<Formulario class/>)} className="bttn-card"/>
+                    <Bttn texto="Editar" onClick = {()=>setFormulario(<Formulario/>)} className="bttn-card"/>
                     
                 </div>
               </li>

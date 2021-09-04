@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Bttn from "../Bttn/bttn";
 import "../Formulario/form.css";
 
-const Formulario = ({ filmes, setFilmes, label1, label2, label3, label4 }) => {
+const Formulario = ({ filmes, setFilmes, label1, label2, label3, label4 , className}) => {
   const [nomeFilme, setNome] = useState("");
   const [lancamentoFilme, setLancamento] = useState("");
   const [url, setUrl] = useState("");
@@ -43,12 +43,13 @@ const Formulario = ({ filmes, setFilmes, label1, label2, label3, label4 }) => {
   return (
     <div className="container-form">
       <div className="div_container-form">
-        <form onSubmit={HandleSubmit}>
+        <form onSubmit={HandleSubmit} className="form-submit" >
         
               <div className="form-div-space">
-                <h1>Cadastre um filme</h1>
-                <label>{label1} </label>
-                <input
+                <h1 className="h1-submit">Cadastre um filme</h1>
+                <label className="label-submit">{label1} </label>
+                <input 
+                className = "input-submit"
                   value={nomeFilme}
                   onChange={handleChangeName}
                   required
@@ -56,8 +57,8 @@ const Formulario = ({ filmes, setFilmes, label1, label2, label3, label4 }) => {
                 <div/>
                   
                   <div className="form-div-space"></div>
-                  <label>{label2} </label>
-                  <input
+                  <label className="label-submit" >{label2} </label>
+                  <input className = "input-submit"
                     value={lancamentoFilme}
                     onChange={handleChangeLancamento}
                     required
@@ -65,13 +66,18 @@ const Formulario = ({ filmes, setFilmes, label1, label2, label3, label4 }) => {
                 
                 <div />
                 <div className="form-div-space"></div>
-                  <label>{label3} </label>
-                  <input value={url} onChange={handleChangeUrl} required></input>
+                  <label className="label-submit">{label3} </label>
+                  <input 
+                  className = "input-submit"
+                  value={url} 
+                  onChange={handleChangeUrl} required>
+                  </input>
+
                   
                 <div />
                 <div className="form-div-space"></div>
-                  <label>{label4} </label>
-                  <input
+                  <label className="label-submit">{label4} </label>
+                  <input className = "input-submit"
                     value={trailerFilme}
                     onChange={handleChangeTrailer}
                     required

@@ -31,7 +31,7 @@ const App = () => {
   ]);
 
   const [editando, setEditando] = useState(false);
-  
+  const [formulario,setFormulario] =useState("")
   const handleDelete = (id) => {
     console.log(handleDelete);
     setFilmes(filmes.filter((e) => id != e.id));
@@ -75,12 +75,13 @@ const App = () => {
                 <div className="bttns-card-container">
                     <Bttn texto="Ver trailer" href={f.trailer} className="bttn-card"/>
                     <Bttn texto="Excluir" onClick={() => handleDelete(f.id)} className="bttn-card"/>
-                    <Bttn texto="Editar" onClick = {()=>setEditando(true)} className="bttn-card"/>
+                    <Bttn texto="Editar" onClick = {()=>setFormulario(<Formulario class/>)} className="bttn-card"/>
                     
                 </div>
               </li>
             ))}
             </ul>
+            {formulario}
         </div>
       </div>
   );

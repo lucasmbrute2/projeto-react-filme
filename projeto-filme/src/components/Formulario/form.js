@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Bttn from "../Bttn/bttn";
 import "../Formulario/form.css";
 
-const Formulario = ({ filmes, setFilmes, label1, label2, label3, label4 , className}) => {
+const Formulario = ({ filmes, setFilmes, label1, label2, label3, label4 }) => {
   const [nomeFilme, setNome] = useState("");
   const [lancamentoFilme, setLancamento] = useState("");
   const [url, setUrl] = useState("");
